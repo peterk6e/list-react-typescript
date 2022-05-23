@@ -1,38 +1,71 @@
+:root {
+  --main-color: #007dc5;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header .input-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.header input {
+  width: 400px;
+  height: 40px;
+  padding-left: 10px;
+  font-size: 17px;
+  border: 2px solid var(--main-color);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.header .task-input {
+  border-top-left-radius: 16px;
+}
+
+.header .days-input {
+  border-bottom-left-radius: 16px;
+}
+
+.header button {
+  width: 80px;
+  height: 92px;
+  border: none;
+  border-bottom-right-radius: 16px;
+  border-top-right-radius: 16px;
+  cursor: pointer;
+  background: var(--main-color);
   color: white;
+  font-weight: 600;
+  transition: 0.6s;
 }
 
-.App-link {
-  color: #61dafb;
+.header button:hover {
+  background: #00a2ff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header input:focus {
+  outline: none;
+  border: 2px solid #00a2ff;
+}
+
+.header {
+  flex: 30%;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
