@@ -6,7 +6,15 @@ interface Props {
 }
 
 const Task = ({ task }: Props) => {
-  return <div>{task.taskText}</div>;
+  return (
+    <div className="task">
+      <div className="content">
+        <span>{task.taskText}</span>
+        <span>{task.days}</span>
+      </div>
+      <button>X</button>
+    </div>
+  );
 };
 
 export default Task;
