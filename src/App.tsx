@@ -18,6 +18,8 @@ const App: FC = () => {
   const addTask = (): void => {
     const newTask = { taskText: task, days: days };
     setList([...list, newTask]);
+    setDays(0);
+    setTask("");
   };
 
   return (
@@ -28,6 +30,7 @@ const App: FC = () => {
             className="task-input"
             type="text"
             placeholder="What do you have to do?"
+            value={task}
             name="task"
             onChange={handleChange}
           />
@@ -35,6 +38,7 @@ const App: FC = () => {
             className="days-input"
             type="number"
             placeholder="in how many days?"
+            value={days}
             name="days"
             onChange={handleChange}
           />
