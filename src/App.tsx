@@ -1,5 +1,6 @@
 import React, { FC, ChangeEvent, useState } from "react";
 import { ITask } from "./Interfaces";
+import Task from "./components/Task";
 import "./App.css";
 
 const App: FC = () => {
@@ -45,7 +46,11 @@ const App: FC = () => {
         </div>
         <button onClick={addTask}> + Add </button>
       </div>
-      <div className="list"></div>
+      <div className="list">
+        {list.map((task: ITask, key: number) => {
+          return <Task key={key} task={task} />;
+        })}
+      </div>
     </div>
   );
 };
