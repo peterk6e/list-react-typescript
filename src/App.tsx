@@ -17,10 +17,16 @@ const App: FC = () => {
   };
 
   const addTask = (): void => {
-    const newTask = { taskText: task, days: days };
-    setList([...list, newTask]);
-    setDays(0);
-    setTask("");
+    if (task) {
+      const newTask = { taskText: task, days: days };
+      setList([...list, newTask]);
+      setDays(0);
+      setTask("");
+    }
+  };
+
+  const completeTask = (TaskToDelete: string): void => {
+    setList(list.filter((task) => task.taskText !== TaskToDelete));
   };
 
   return (
@@ -48,7 +54,7 @@ const App: FC = () => {
       </div>
       <div className="list">
         {list.map((task: ITask, key: number) => {
-          return <Task key={key} task={task} />;
+          return <Task key={key} task={task} completeTask={completeTask} />;
         })}
       </div>
     </div>
